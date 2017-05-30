@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-5">
+    <!--<app-recipe-list (recipeComp) = "onReceipeComp($event)"></app-recipe-list>-->
+    <app-recipe-list (recipeComp) = "recipeTop = $event"></app-recipe-list>
+  </div>
+  <div class="col-md-7">
+    <app-recipe-detail
+      [receiteRef] = "recipeTop"
+      *ngIf = "recipeTop; else infoText"
+    ></app-recipe-detail>
+    <ng-template #infoText>
+      <p> Please select a template</p>
+    </ng-template>
+  </div>
+</div>
+
